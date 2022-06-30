@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href="/test.css" rel="stylesheet">
+<title> Student Registration LGN001 </title>
+</head>
+<body class="login-page-body"> 
+  
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h1>Welcome!</h1>
+            <p th:if="${error}" th:text="${error}"></p>
+          </div>
+        </div>
+        <form class="login-form" th:action="@{/Login}" method="post" name="confirm">
+          <input type="text" name="id" placeholder="User ID" value="" autofocus />
+          <input type="password" name="password" value="" placeholder="Password" />
+          <button>login</button>
+          <p class="message">Not registered? <a th:href="@{/displayUserRegister}">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+</body>
+
+</html>
