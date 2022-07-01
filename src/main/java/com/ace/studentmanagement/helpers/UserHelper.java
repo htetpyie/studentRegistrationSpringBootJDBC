@@ -15,9 +15,8 @@ import com.ace.studentmanagement.dto.UserResponseDTO;
   public  String idGenerator() {
 	  String id = "";
 	  	System.out.println("in id generator...");
-		  List<UserResponseDTO> list =  new ArrayList<>();
-		  //list = dao.selectUserAll();
-		  for(UserResponseDTO a: dao.selectUserAll()) {
+		  List<UserResponseDTO> list = dao.selectUserAll();
+		  for(UserResponseDTO a: list) {
 			  System.out.println(a.getUserId());
 		  }
 		  System.out.println("list size is "+ list.size());
@@ -34,7 +33,7 @@ import com.ace.studentmanagement.dto.UserResponseDTO;
 	  
 	  public boolean isEmailExist(String email) { 
 		  try {
-			  List<UserResponseDTO> list = new UserDAO().selectUserAll();
+			  List<UserResponseDTO> list = dao.selectUserAll();
 			  System.out.println("size is " + list.size());
 			  if(list != null) { 
 				  for(UserResponseDTO user: list ) { 

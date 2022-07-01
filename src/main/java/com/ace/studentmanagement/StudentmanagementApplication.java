@@ -10,8 +10,8 @@ public class StudentmanagementApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StudentmanagementApplication.class, args);
-//		String id = new UserHelper().idGenerator();
-//		System.out.println("id is "+ id);
+		String id = new UserHelper().idGenerator();
+		System.out.println("id is "+ id);
 	}
 
 }

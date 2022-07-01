@@ -9,6 +9,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.ace.studentmanagement.dao.UserDAO;
 import com.ace.studentmanagement.dto.UserResponseDTO;
 import com.ace.studentmanagement.helpers.CurrentDate;
@@ -23,8 +25,12 @@ public class Authentication {
 			return "LGN001";
 		}
 	
-	  @GetMapping("/showMenu") public String showMenu(){ 
-		  return "MNU001"; 
+	  @GetMapping("/showMenu") 
+	  public String showMenu(HttpSession session){ 
+		  if(session.getAttribute("user") == null) { 
+			  return "redirect:/"; 
+			  }
+		  else return "MNU001"; 
 		  }
 	  
 	  @PostMapping("/Login") 

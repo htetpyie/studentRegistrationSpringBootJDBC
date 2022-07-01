@@ -102,7 +102,7 @@
                 <legend class="col-form-label col-md-2 pt-0">Attend</legend>          
               
                 <div class='col-md-4'>
-                	<input type="checkbox" class="form-check-input col-md-2 ms-2" th:each="course : ${courseList}" th:text="${course.courseName}" th:value="${course.courseId}" th:field="*{studentCourse}">
+                	<input type="checkbox" class="form-check-input col-md-2 ms-2 ps-2" th:each="course : ${courseList}" th:text="${course.courseName}" th:value="${course.courseId}" th:field="*{studentCourse}">
    
                </div> 
                 <div class="col-md-4">

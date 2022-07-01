@@ -22,7 +22,7 @@
   	<div th:insert="header :: header"></div>
     <div class="main_contents">
     <div id="sub_content">
-      <form class="row g-3 mt-3 ms-2" th:action="@{/searchStudent}" method="get">
+      <form class="row g-3 mt-3 ms-2" th:action="@{/searchStudent} " method="get">
         <div class="col-auto">
           <label for="staticEmail2" class="visually-hidden">studentID</label>
           <input type="text"  class="form-control" id="staticEmail2" name="id" placeholder="Student ID">
@@ -54,8 +54,8 @@
           </tr>
         </thead >
         <tbody >     
-	          	<tr th:if="${studentList.size()} > 0"  th:each="student : ${studentList}">
-	          		<td th:text="1"/>
+	          	<tr th:if="${studentList.size()} > 0"  th:each="student, iterationStatus : ${studentList}">
+	          		<td th:text="${iterationStatus.count}"/>
 	          		<td th:text="${student.studentId}"/>
 	          		<td th:text="${student.studentName }"/>
 	           		<td th:text="${map.get(student.studentId)}" />
