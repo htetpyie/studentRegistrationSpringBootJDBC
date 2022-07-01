@@ -1,18 +1,16 @@
 package com.ace.studentmanagement.helpers;
   
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import com.ace.studentmanagement.dao.UserDAO;
 import com.ace.studentmanagement.dto.UserResponseDTO;
-	@Repository
   public class UserHelper {
-  @Autowired
-  private UserDAO dao;
+  
+
+  
   public  String idGenerator() {
+	  UserDAO dao = new UserDAO();
 	  String id = "";
 	  	System.out.println("in id generator...");
 		  List<UserResponseDTO> list = dao.selectUserAll();
@@ -33,6 +31,7 @@ import com.ace.studentmanagement.dto.UserResponseDTO;
 	  
 	  public boolean isEmailExist(String email) { 
 		  try {
+			  UserDAO dao = new UserDAO();
 			  List<UserResponseDTO> list = dao.selectUserAll();
 			  System.out.println("size is " + list.size());
 			  if(list != null) { 

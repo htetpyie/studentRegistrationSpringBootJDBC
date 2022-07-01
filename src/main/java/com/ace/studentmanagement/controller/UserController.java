@@ -109,7 +109,6 @@ import com.ace.studentmanagement.model.UserBean;
 							  int lastId = Integer.parseInt(lastDTO.getUserId().substring(3)); 
 							  id = String.format("USR"+"%03d", lastId+1); 
 						  } 		  
-						  //userBean.setUserId(new UserHelper().idGenerator()); 
 						  userBean.setUserId(id);
 						  System.out.println("id is "+ userBean.getUserId());
 						  UserDTO dto = new UserDTO(userBean.getUserId(), userBean.getUserName(), userBean.getUserEmail(), userBean.getUserPassword(), userBean.getUserRole());
